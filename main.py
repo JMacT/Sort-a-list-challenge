@@ -1,3 +1,6 @@
+# This program is complete 10/27/22
+
+#challenge:
 # Create a function in Python that accepts two parameters.
 # The first will be a list of numbers.
 # The second parameter will be a string that can be one of the following values: asc, desc, and none.
@@ -7,7 +10,7 @@
 # and if it's "none," it should return the original list unaltered.
 import string
 from string import ascii_letters
-from random import choice
+import random
 
 def testStr(str):
     countBuckets = [0,0,0]
@@ -20,7 +23,6 @@ def testStr(str):
                     old = iterchar.__next__()
                     pass
                 new = iterchar.__next__()
-                print('values are: ', old, ' ', new)
                 if new > old:
                     countBuckets[0] = countBuckets[0] + 1
                 elif new < old:
@@ -43,15 +45,20 @@ def testStr(str):
     except:
         return "fault"
 
-def sort_list(numList, str):
+#put the string and array inputs here:
+nums = []
+numRange = random.randrange(0,10000)
+print(numRange)
+for x in range(numRange):
+    nums.append(x)
 
-    return
+str = ['z','a','z']
 
-blop = []
-for x in string.ascii_letters():
-    ''.join(x)
+# letters = []
+# letters.append(string.ascii_letters)
+if testStr(str) == 'ascending':
+    nums.sort(key = None, reverse=False)
+elif testStr(str) == 'descending':
+    nums.sort(key = None, reverse=True)
 
-print(blop)
-strasc = blop
-
-print(testStr(strasc))
+print(nums)
